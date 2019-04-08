@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+<style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .wrap {
+            width: 300px;
+            margin: 100px auto 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid #c0c0c0;
+        }
+
+        th,
+        td {
+            border: 1px solid #d0d0d0;
+            color: #404060;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #09c;
+            font: bold 16px "微软雅黑";
+            color: #fff;
+        }
+
+        td {
+            font: 14px "微软雅黑";
+        }
+
+        tbody tr {
+            background-color: #f0f0f0;
+        }
+
+        tbody tr:hover {
+            cursor: pointer;
+            background-color: #fafafa;
+        }
+    </style>
+    <script src="../../../js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			//需求1:点击上面的按钮，下面所有的按钮都跟上面一致
+			//需求2:点击下面的按钮，判断下面所有的按钮是否都被☑️
+
+			//需求1:点击上面的按钮，下面所有的按钮都跟上面一致
+			$("#j_cbAll").click(function(){
+				$("input").attr("checked",true);
+			});
+			//需求2:点击下面的按钮，判断下面所有的按钮是否都被☑️
+			$("#j_tb input").click(function(){
+				//判断下面都被选 上面才被选
+				if ($("#j_tb input:checkbox").length===$("#j_tb input:checked").length) {
+					$("#j_cbAll").prop("checked",true);
+				}else {
+					$("#j_cbAll").prop("checked",false);
+				}
+			});
+		});
+
+
+	</script>
+</head>
+<body>
+	<table>
+            <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="j_cbAll">
+                    </th>
+                    <th>课程名称</th>
+                    <th>所属学院</th>
+                </tr>
+            </thead>
+            <tbody id="j_tb">
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>JavaScript</td>
+                    <td>前端与移动开发学院</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>css</td>
+                    <td>前端与移动开发学院</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>html</td>
+                    <td>前端与移动开发学院</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>jQuery</td>
+                    <td>前端与移动开发学院</td>
+                </tr>
+            </tbody>
+        </table>
+
+	
+</body>
+</html>

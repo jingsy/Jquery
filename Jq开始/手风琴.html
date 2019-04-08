@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding: 0;
+		}
+		ul{
+			width: 400px;
+			
+			list-style: none;
+		}
+		li{
+			background-color: lightblue;
+			border: 1px solid gray;
+			width: 400px;
+		}
+		span{
+			display: block;
+			border: 1px solid gray;
+			width: 400px;
+			cursor: pointer;
+		}
+		div{
+			width: 400px;
+			height: 700px;
+			border: 1px solid gray;
+			background-color: white;
+			display: none;
+	
+		}
+
+	</style>
+	<script src="../../../js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//需求：鼠标点击span 让他下面的div显示 让其他的div隐藏
+			$("span").click(function(){
+			// 	$(this).next().show();
+			// 	//让其他的隐藏
+			// 	$(this).parent("li").siblings("li").children("div").hide();
+			
+			//法2:优化版
+			$(this).next().show().parent("li").siblings("li").children("div").hide();
+
+			})
+		});
+
+
+	</script>
+</head>
+<body>
+	<ul class="parentWrap">
+		<li class="menuGroup">
+			<span>标题1</span>
+			<div>弹出来</div>
+		</li>
+		<li class="menuGroup">
+			<span>标题2</span>
+			<div>弹出来弹出来</div>
+		</li>
+		<li class="menuGroup">
+			<span>标题3</span>
+			<div>弹出来</div>
+		</li>
+		<li class="menuGroup">
+			<span>标题4</span>
+			<div>弹出来</div>
+		</li>
+	</ul>
+</body>
+</html>

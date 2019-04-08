@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+			position: absolute;
+			left: 0;
+		}
+
+
+
+	</style>
+</head>
+<body>
+	<button>运动到400</button>
+	<div></div>
+
+	<script type="text/javascript">
+		var btn = document.getElementsByTagName("button")[0];
+		var div = document.getElementsByTagName("div")[0];
+
+		btn.onclick = function(){
+			setInterval(function(){
+				//缓动，步长越来越小
+				//盒子位置=盒子本来到位置+（目标位置-现在的位置）/10
+				div.style.left=div.offsetLeft+(400-div.offsetLeft)/10 +"px";
+				i
+			},30);
+		}
+
+	</script>
+</body>
+</html>

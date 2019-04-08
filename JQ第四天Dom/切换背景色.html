@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+		}
+		.current{
+			background-color: black;
+		}
+
+	</style>
+	<script src="../../../js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		
+		$(function(){
+			$("button").click(function(){
+			// 	//切换背景
+			// //判断div是否有cuurent类 如果有删除
+			// if($("div").hasClass("current")){
+			// 	$("div").removeClass("current");
+			// }else {
+			// 	$("div").addClass("current");
+			// }
+
+			//方法二
+			$("div").toggleClass("current");
+
+			})	
+		});
+
+
+
+
+
+	</script>
+	
+</head>
+<body>
+	<button>1</button>
+	<div>
+		
+	</div>
+	
+</body>
+</html>

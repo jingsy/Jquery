@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../../../js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+
+		$(window).ready(function(){
+			var jqLiOdd = $("ul li:odd");
+			jqLiOdd.css("background","pink");
+
+			var jqLiEven = $("ul li:even");
+			jqLiEven.css("background","orange");
+
+			var jqLiTwo = $("ul li:eq(2)");
+			jqLiTwo.css("background","green");
+		});
+	</script>
+</head>
+<body>
+	<ul>
+		<li>wqweqweqwe</li>
+		<li>wqweqweqwe</li>
+		<li>wqweqweqwe</li>
+		<li>wqweqweqwe</li>
+		<li>wqweqweqwe</li>
+		<li>wqweqweqwe</li>
+		<li>wqweqweqwe</li>
+		<li>wqweqweqwe</li>
+		<li>wqweqweqwe</li>
+	</ul>
+
+</body>
+</html>

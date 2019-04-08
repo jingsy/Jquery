@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../../../js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		//三种方法获取juquery对象，然后css方法操作
+		$(document).ready(function(){
+			var jqdiv = $("div");
+		var jqCdiv = $(".box");
+		var jqIdiv = $("#box");
+
+		jqdiv.css("width",100);
+		jqdiv.css("height",100);
+		jqdiv.css("background","pink");
+		jqdiv.css("margin",10);
+
+
+		//
+		jqCdiv.css("background","red");
+
+		//
+		jqIdiv.css("background","yellow");
+		});
+
+		//层级选择器
+		
+
+
+	</script>
+</head>
+<body>
+	<div></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div id="box"></div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+		}
+
+	</style>
+	<script src="../../../js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		//创建节点 类比document.createElement("li")
+		// console.log($("<li></li>"));
+		// //创建节点2
+		// $("ul").html("<li></li>");
+
+		$(document).ready(function(){
+			//append()
+			//在盒子中添加
+			$("button").click(function(){
+				//创建一个新的jq对象li
+				var jqnewLi = $("<li>我是jq创建的li</li>");	
+				$("ul").append(jqnewLi);
+			});
+		});
+
+	</script>
+
+	</head>
+	<body>
+		<button>12</button>
+		<ul>
+			<li>我是土著li</li>
+		</ul>
+
+	</body>
+	</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 400px;
+			height: 400px;
+			background-color: pink;
+			display: none;
+			margin: 10px auto;
+		}
+
+	</style>
+	<script src="../../../js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		
+		// $(function(){
+		// 	$("button").eq(0).click(function(){
+		// 		$("div").show(300);
+		// 	});
+		// 	$("button").eq(1).click(function(){
+		// 		$("div").hide(300);
+		// 	});
+		// });
+
+		//放回调函数
+		$(function(){
+			$("button").eq(0).click(function(){
+				$("div").fadeTo('400', 0.2, function() {
+					
+				});
+			});	
+		});
+
+
+
+	</script>
+	
+</head>
+<body>
+	<button>显示</button>
+	<button>隐藏</button><br>
+	<div>
+		
+	</div>
+	
+</body>
+</html>

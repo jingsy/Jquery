@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../../../js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		//层级选择器
+		$(document).ready(function(){
+			//获取ul中的li设置为粉色
+			var jqli=$("ul li");
+			jqli.css("background","pink");
+			jqli.css("margin",5);
+
+			var jqOtherLi = $("ul>li");
+			jqOtherLi.css("background","red");
+
+		});
+
+
+	</script>
+</head>
+<body>
+	<ul>
+		<li>111</li>
+		<li>222</li>
+		<li>333</li>
+		<ol>
+			<li>aaa</li>
+			<li>bbb</li>
+			<li>ccc</li>
+		</ol>
+	</ul>
+</body>
+</html>

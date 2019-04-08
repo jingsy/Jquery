@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../../../js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		//原生js入口函数
+		//不仅文本加载完毕，而且图片也要加载完才执行函数
+		// window.onload=function(){}
+
+		// jq入口函数 1.文档加载完毕，图片不加载的时候就可以执行此函数
+		// $(document).ready(function(){
+
+		// });
+
+		//jq入口函数  2.图片加载完毕执行次函数
+		// $(function(){
+		// 	alert(1);
+		// });
+
+		//不仅文本加载完毕，而且图片也要加载完才执行函数
+		$(window).ready(function(){
+			alert(1);
+		});
+	</script>
+</head>
+<body>
+	
+
+</body>
+</html>

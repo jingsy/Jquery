@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+
+	</style>
+	<script src="../../../js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		
+		//自定义动画
+		$(function(){
+			var jqinp = $("input");
+			var jqbtn = $("button");
+
+			jqbtn.click(function() {
+				//绑定到jq的衣服上 标签上没有
+				// jqinp.aaa=111;
+				// console.log(jqinp.aaa);
+
+				//绑定到标签shang
+				jqinp.attr("title",111);
+				jqinp.attr("class","aaa");
+
+				//移除
+				jqinp.removeAttr("class","aaa");
+			});
+		});
+
+
+
+	</script>
+	
+</head>
+<body>
+	<button>绑定</button>
+	<input type="text" name="">
+	
+</body>
+</html>

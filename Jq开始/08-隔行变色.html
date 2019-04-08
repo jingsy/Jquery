@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		
+	</style>
+
+	<script src="../../../js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		jQuery(function(){
+			var jqLi = $("li");
+			// var liArr =document.getElementsByTagName("li");
+			for (var i = 0; i < jqLi.length; i++) {
+				if (i%2===0) {
+					//jquery 对象转换成了js对象
+					jqLi[i].style.background = "yellow";
+				}else {
+					jqLi.get(i).style.background = "red";
+				}
+			}
+		});
+
+
+
+	</script>
+</head>
+<body>
+	<ul>
+		<li>好好好</li>
+		<li>好好好</li>
+		<li>好好好</li>
+		<li>好好好</li>
+		<li>好好好</li>
+		<li>好好好</li>
+		<li>好好好</li>
+	</ul>
+</body>
+</html>

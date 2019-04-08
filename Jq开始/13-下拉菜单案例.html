@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		div{
+			width: 310px;
+			height: 40px;
+			/*background-color: lightblue;*/
+			position: absolute;
+			/*background: url(../../../image/background.jpeg") ;*/
+		}
+
+		div>ul>li{
+			list-style: none;
+			float: left;
+		}
+		div>ul>li>ul{
+			display: none;
+		}
+		li,a{
+			text-decoration: none;
+			list-style: none;
+		}
+		a{
+			height: 40px;
+			width: 100px;
+			display: inline-block;
+			text-align: center;
+			margin: 5px auto;
+		}
+		
+
+
+	</style>
+	<script src="../../../js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//鼠标放入1级li中 让他里面的ul显示，移开隐藏
+			var jqli = $("div>ul>li");
+			jqli.mousemove(function() {
+				//放在谁 谁显示 用到this
+				//把js的dom包装为jq对象 然后用jq方法操作
+				// console.log(this);
+				$(this).children("ul").show();
+			});
+		
+			jqli.mouseleave(function() {
+				//放在谁 谁显示 用到this
+				//把js的dom包装为jq对象 然后用jq方法操作
+				// console.log(this);
+				$(this).children("ul").hide();
+			});
+	});
+
+	</script>
+</head>
+<body>
+	 <div class="wrap">
+	 	<ul >
+	 		<li>
+	 			<a href="">一级菜单1</a>
+	 			<ul>
+	 				<li>二级菜单1</li>
+	 				<li>二级菜单2</li>
+	 				<li>二级菜单3</li>
+	 			</ul>
+	 		</li>
+	 		<li>
+	 			<a href="">一级菜单2</a>
+	 			<ul>
+	 				<li>二级菜单4</li>
+	 				<li>二级菜单5</li>
+	 				<li>二级菜单6</li>
+	 			</ul>
+	 		</li>
+	 		<li>
+	 			<a href="">一级菜单3</a>
+	 			<ul>
+	 				<li>二级菜单7</li>
+	 				<li>二级菜单8</li>
+	 				<li>二级菜单9</li>
+	 			</ul>
+	 		</li>
+	 	</ul>
+	 </div>
+
+
+	<script type="text/javascript">
+		
+	</script>
+</body>
+</html>

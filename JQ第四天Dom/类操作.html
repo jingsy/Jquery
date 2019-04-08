@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+		.change{
+			background-color: pink;
+		}
+		.origin{
+			background-color: red;
+		}
+
+
+	</style>
+	<script src="../../../js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		
+		$(function(){
+			//类操作
+			$("button").eq(0).click(function(){
+				$("div").addClass("change");
+			});
+
+			
+			//删除类
+			$("button").eq(1).click(function(){
+				// $("div").addClass("origin");
+				$("div").removeClass("change");
+
+			});
+
+		});
+
+
+
+
+
+	</script>
+	
+</head>
+<body>
+	<button>变色</button>
+	<button>huifu</button>
+	<div>
+		
+	</div>
+	
+</body>
+</html>

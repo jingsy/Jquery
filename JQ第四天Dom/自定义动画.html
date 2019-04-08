@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+			position: absolute;
+			margin: 100px 400px;
+			/*border-radius: */
+		}
+
+	</style>
+	<script src="../../../js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		
+		//自定义动画
+		$(function(){
+			$("button").click(function(){
+				// var json = {"width":400,"height":400,"border-radius":100};
+				// var json2 = {"width":200,"height":200,"border-radius":0};
+				// $("div").animate(json,1000,function(){
+				// 	$("div").animate(json2,1000,function(){
+				// 		// alert("执行完毕！")
+				// 	});
+				// });
+				$("div").animate({"height":0},2000);
+				
+			});	
+		});
+
+
+
+	</script>
+	
+</head>
+<body>
+	<button>动画</button>
+	<div>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			height: 100px;
+			background-color: pink;
+			margin: 10px;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	
+	<button>显示盒子和设置内容</button>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+
+	<script src="../../../js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		//jquery 
+		$(document).ready(function(){
+			//获取元素
+			var jQbtn = $("button");//根据标签名获取元素
+			var jQdiv = $("div");//根据标签名获取元素
+			//绑定事件
+			jQbtn.click(function(){
+				//事件驱动程序
+				// jQdiv.show(1000);
+				// jQdiv.html("jQuery太好玩了");
+				jQdiv.show(1000).html("哈哈");
+			});//事件绑定是通过方法绑定的
+		});
+		
+	</script>
+</body>
+</html>

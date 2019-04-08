@@ -1,0 +1,146 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+ 	<meta charset="UTF-8">
+ 	<title>Document</title>
+ 	<style type="text/css">
+ 		*{
+ 			margin: 0;
+ 			padding:0;
+ 		}
+ 		.box{
+			width: 490px;
+			height: 170px;
+			padding: 5px;
+			border: 1px solid #ccc;
+			margin: 200px auto;
+ 		}
+ 		.inner{
+ 			width: 490px;
+			height: 170px;
+			position: relative;
+			overflow: hidden;
+ 		}
+ 		ul{
+			position: absolute;
+ 			list-style: none;
+ 			width: 500%;
+ 		}
+ 		li{
+			float: left;
+ 		}
+ 		.square{
+ 			position: absolute;
+ 			bottom: 10px;
+ 			right: 15px;
+ 		}
+ 		span{
+ 			display: inline-block;
+ 			width: 20px;
+ 			height: 20px;
+ 			background-color: #fff;
+ 			text-align: center;
+ 			border: 1px solid #ccc;
+ 			line-height: 20px;
+ 			cursor: pointer;
+ 		}
+ 		.current{
+ 			background-color: darkorange;
+ 			color: #fff;
+ 		}
+ 	</style>
+ </head>
+ <body>
+ 	<div class="box">
+ 		<div class="inner" id="inner">
+ 			<ul>
+ 				<li><img src="../../../image/img01.jpg" alt="" width="490" height="170"></li>
+ 				<li><img src="../../../image/img02.jpg" alt="" width="490" height="170"></li>
+ 				<li><img src="../../../image/img03.jpg" alt="" width="490" height="170"></li>
+ 			</ul>
+ 			<div class="square" >
+ 				<span class="current" id="span">1</span>
+ 				<span>2</span>
+ 				<span>3</span>
+ 			</div>
+ 		</div>
+ 	</div>
+
+
+ 	<script type="text/javascript">
+ 		//需求：鼠标放到小方块上面，上面的图片向左移动制定的数值（图片的宽）
+ 		//思路 绑定事件 点亮指定的盒子，移动ul
+ 		//步骤：
+ 		//1.获取事件源和相关元素
+ 		var inner = document.getElementById("inner");
+ 		var ul=inner.children[0];
+ 		var spanArr=inner.children[1].children;
+
+ 		//2.绑定事件和书写事件驱动程序（for循环绑定）
+ 		for (var i = 0; i < spanArr.length; i++) {
+ 			//属性绑定 自定义属性存储盒子的索引值
+ 			//用span的innerHtml属性也可以 但是不好
+ 			spanArr[i].index=i;//绑定的是索引值 所以移动盒子不用减一
+ 			 spanArr[i].onmouseover=function(){
+ 				//3.点亮盒子
+ 				//排他思想
+ 				for (var j = 0; j < spanArr.length; j++) {
+ 					spanArr[j].className="";
+ 				}	
+ 				this.className="current";
+ 				//4.移动ul（向左移动，给定目标为负值。放到第几个小方块上向左移动n-1个图片的宽
+ 				//利用框架移动盒子（
+ 				animate(ul,this.index*-490);
+ 			}
+ 		}
+ 		
+ 		function animate(obj,target) {
+        clearInterval(obj.timer);  // 要开启定时器，先清除以前定时器
+        // 有2个参数 第一个 对象谁做动画  第二 距离 到哪里
+        // 如果 offsetLeft 大于了  target 目标位置就应该反方向
+        var speed = obj.offsetLeft < target ? 15 : -15;
+        obj.timer = setInterval(function() {
+            var result = target - obj.offsetLeft;  //  他们的值 等于 0 说明完全相等
+            // 动画的原理
+            obj.style.left = obj.offsetLeft + speed  + "px";
+            if(Math.abs(result) <= 15) {
+                obj.style.left = target + "px";   //抖动问题
+                clearInterval(obj.timer);
+            }
+        },10);
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 	</script>
+ </body>
+ </html>

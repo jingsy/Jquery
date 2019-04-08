@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin = 0;
+			padding = 0;
+		}
+
+		div{
+			width: 94px;
+			margin: 50px auto 0;
+		}
+		
+	</style>
+	<script src="../../../js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//获取元素
+			var inpArr = document.getElementsByTagName("input");
+			var bd = $("body");
+			//绑定事件
+
+			$(inpArr[0]).click(function(){
+				//jquery对象转化为js对象
+				bd.get(0).style.backgroundColor = "black";
+			});
+			$(inpArr[1]).click(function(){
+				bd[0].style.backgroundColor = "white";
+			});
+		});
+	</script>
+</head>
+<body>
+	<input type="button" value="开灯" id="j_openLight"/>
+	<input type="button" value="关灯" id="j_closeLight"/>
+
+
+	<div>
+		<img src="">
+	</div>
+</body>
+</html>
