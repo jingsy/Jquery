@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* css initial */
+        *{
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+        .tpl{
+            display: none;
+        }
+        .clearfix::after{
+            content: '';
+            display: block;
+            overflow: hidden;
+            clear: both;
+        }
+        .wrapper{
+            border: 1px solid #ccc;
+            padding: 10px 5px;
+            width: 350px;
+            margin: 100px auto 0px;
+        }
+        .wrapper .headSection{
+            margin-bottom: 10px;
+        }
+        .wrapper .headSection .hot{
+            font-size: 18px;
+            font-weight: bold;
+            float: left;
+        }
+        .wrapper .headSection .change{
+            float: right;
+            color:#0088ff;
+            cursor: pointer;
+        }
+
+        .wrapper .showSection .number{
+            color:#fff;
+            background: #0bf;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            display: inline-block;
+        }
+        /* .wrapper .showSection .title{
+            
+        } */
+        .wrapper .showSection .mes{
+            float: right;
+        }
+
+
+        .wrapper .showSection .mes::after{
+            content: '';
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+        }
+        .wrapper .showSection .mes.up::after{
+            background-image: url('./img/up.png');
+            background-size: 100% 100%;
+            background-position-y: 4px;
+        }
+        .wrapper .showSection .mes.down::after{
+            background-image: url('./img/down.png');
+            background-size: 100% 100%;
+            background-position-y: 4px;
+        }
+
+        
+    
+    </style>
+</head>
+<body>
+    
+    <div class="wrapper">
+        <div class="headSection clearfix" >
+            <span class="hot">搜索热点</span>
+            <span class="change">换一换</span>
+        </div>
+        <ul class="showSection">
+            <li class="tpl clearfix">
+                <span class="number"></span>
+                <span class="title"></span>
+                <span class="mes up"></span>
+            </li>
+        </ul>
+    </div>
+
+    <script src="../jquery/jquery-3.3.1.js"></script>
+    <script src="./serverData.js"></script>
+    <script>
+        (function(data){
+            //初始化变量
+            var $Wrapper = $('.wrapper');
+            var $ShowSection =$Wrapper.find('.showSection');
+            var colorsArray = ['#f54545','#ff8547','#ffac38'];
+            // one * 10
+            var curPage = 0;
+            var totalPage =Math.ceil( data.length / 10);
+
+            $ShowSection.hide();
+            function bindEvent(){
+                $Wrapper.find('.change').on('click',function(){
+                    
+                    curPage= ++curPage % totalPage
+                    renderPage(data);
+                });
+            }
+            function renderPage (data) {
+                //清空之前的值
+                //empty() 清空所有的子元素
+                $ShowSection.hide().find('.showItem').remove();
+                //根据数据渲染页面
+                //前三页每页渲染10个数据 超过34个就展示data.length - curPage *10的差的个数
+                var len = (data.length - curPage *10) >=10 ? 10: data.length - curPage *10
+                
+                //
+                for(var i=0;i<len;i++){
+                    var $Clone = $Wrapper.find('.tpl').clone().removeClass('tpl').addClass('showItem');
+                    var ele = data[i+curPage*10];
+
+                    $Clone.children('span').eq(0)
+                        .text(i+curPage*10+1).css('backgroundColor',curPage==0 && colorsArray[i+curPage])
+                            .next()
+                                .text(ele.title)
+                                    .next(ele.search)
+                                        .addClass(ele.search>ele.hisSearch?'up':'down');
+                    $ShowSection.append($Clone);
+                }
+                $ShowSection.fadeIn();
+
+                
+
+            }
+
+            bindEvent();
+            renderPage(data);
+        })(data);
+        
+    </script>
+
+</body>
+</html>

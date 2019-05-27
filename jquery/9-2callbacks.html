@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="wrapper">
+
+    </div>
+    <script src="./jquery/jquery-3.3.1.js"></script>
+    <script>
+
+    //js单线程-》异步编程优化体验-》 防止阻塞页面 -》回掉函数
+    //运动函数 animate 当你满足某个状态 接下要去做另一件事
+
+   //1.定时触发器线程
+   //2.http网络请求线程
+   //3.事件监听线程
+
+   //callbacks返回回调对象
+        
+   //参数
+   //1.可以传once 传了只会fire一次
+   //2.memory - 带记忆功能 后加的 fire也会显示
+   //3.unique - 同一样的只执行一次
+   //4.stopOnFalse - 碰到返回为false的时候 无论后面是啥都不执行了
+    
+   //    var cb = $.Callbacks("once");
+   var cb = $.Callbacks("once");
+    
+   //可以传参数
+   function a (x,y){
+       console.log("a",x,y);
+   }
+   function b (x,y){
+       console.log("b",x,y);
+   }
+   cb.add(a,b);
+
+   
+   cb.fire("10","20");
+
+    </script>
+</body>
+</html>

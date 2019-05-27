@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="tpl">
+            <p></p>
+            <span></span>
+            <button>add</button>
+        </div>
+
+        <p class="show">
+            <span>sum</span>
+            <span class="sum">0</span>
+        </p>
+    </div>
+
+
+    <script src="./jquery/jquery-3.3.1.js"></script>
+    <script>
+        var showArr = [
+            {
+                id:1,
+                name: 'a',
+                price: 18
+            }, {
+                id:2,
+                name: 'b',
+                price: 121
+            }
+        ];
+        showArr.forEach(function (ele, index) {
+            var cloneDom = $('.tpl').clone().removeClass('.tpl');
+            cloneDom.data({
+                id:ele.id
+            }).find('p')
+                .text(ele.name)
+                .next()
+                .text(ele.price);
+                cloneDom.insertBefore($('.show'));
+        });
+
+
+
+
+
+    </script>
+</body>
+
+</html>

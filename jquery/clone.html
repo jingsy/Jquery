@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+    
+    </style>
+</head>
+<body>
+    <div class="demo"></div>
+
+    <script src="./jquery/jquery-3.3.1.js"></script>
+    <script>
+        //样式属性都可以克隆
+        $('.demo').clone().appendTo('body');
+
+        //但是，事件能克隆吗？
+        //不能
+
+        //我们需要借助第二个参数true
+        $('.demo').clone(true).appendTo('body');
+
+        //true能获取到所有的东西吗
+        // prop设置的值不行
+        //data设置的可以
+
+        //存信息寸数据状态 data
+        $('.demo').data('data-duyi','cg');
+        $('.demo').data({
+            name:'a',
+            age:18
+        });
+        //你用 attr prop 取都是字符串
+        //data是存什么取什么 如存num 取的就是num
+        
+    </script>
+</body>
+</html>

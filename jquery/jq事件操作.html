@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+    .demo{
+        width: 100px;
+        height: 100px;
+        background-color:red;
+    }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    
+    <div class="demo"></div>
+    <script src="./jquery/jquery-3.3.1.js"></script>
+    <script>
+        // on
+        // 系统事件
+        // 可以4个参数
+        // 1. type 2. selector 3. data 4.handle
+
+        // $('.demo').on('click',function(){
+        //     alert(0);
+        // });
+
+        //di三个参数 中间填啥都行
+        // $('.demo').on('click',{name:'cst'},function(){
+
+        // });
+    
+        //第二个参数 事件委托作用
+        // $('ul').on('click','li',function(e){
+        //     alert( $(e.target).text() );
+        // });
+        
+
+        // one()  只触发一次 一次性事件 
+        //参数和on一样
+
+        //on 绑定多个事件
+        // $('.demo').on({
+        //     click:function(){
+        //         console.log("click");
+        //     },
+        //     mouseenter:function(){
+        //         console.log("mouseenter");
+        //     }
+        // });
+
+        // off 解绑事件
+        //解绑所有
+        // $('.demo').off()
+        //取消所有click
+        // $('.demo').off('click')
+
+        //绑定与解绑
+        // $('ul').on('click','li',clickOne);
+        // $('ul').off('click','li',clickOne);
+
+    </script>
+</body>
+</html>

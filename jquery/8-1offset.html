@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            height: 3000px;
+        }
+
+    </style>
+</head>
+<body>
+    <div></div>
+
+
+    <script src="./jquery/jquery-3.3.1.js"></script>
+    <script>
+        //1. offset
+        //offset left top
+        // 返回当前元素距离文档的距离 返回的是个对象 无视定位
+        //原生考虑定位
+        //也可以赋值
+        $('.demo').offset({left:100});
+        
+        //2. position 和 css定位规则一样
+        //考虑父级定位
+        $('.demo').position();
+
+        //3. scrollTop 和scrollLeft
+        //获取滚动的距离，可以赋值
+        $(window).scrollTop(100)
+        
+        //4. width() height() 返回content区的距离
+        $('.demo').width();
+
+        //5. innerWidth() 获取padding+content
+
+        //6. outerWidth() 获取padding+content+border
+
+        //7. outerWidth(true) 获取padding+content+border+margin
+
+        
+    </script>
+
+</body>
+</html>

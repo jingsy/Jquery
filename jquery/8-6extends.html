@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+     #demo{
+         width: 100px;
+         height: 100px;
+         position: absolute;
+         background-color: red;
+     }
+    </style>
+</head>
+<body>
+    <div id="demo"></div>
+    <script src="./jquery/jquery-3.3.1.js"></script>
+    <script>
+        // $.extend
+        // $.fn.extend    
+        //1.扩展方法 *** api没有
+        //2.浅层克隆
+        //3.深层克隆
+
+        //源码这样写的 ，他们this不一样
+        // $.extend = $.fn.extend = function ( ){
+        // }
+
+        //1. $.extend(); //加到工具方法里面
+        // $.extend({
+        //     definedMandom : function (start, final){
+        //         // [0, 1) *len + start
+        //         var len = final - start;
+        //         return Math.random() * len + start;
+        //     },
+        //     abc : function(){
+        //     }
+        // });
+
+        //2. $.fn.extend(); //加到实例方法里面
+        //添加一个drag方法
+        // $.fn.extend({
+        //     drag : function (){
+        //         var disX,
+        //             disY,
+        //             self = this;
+        //         $(this).on('mousedown',function(e){
+        //             var disX = e.pageX -$(this).offset().left;
+        //             var disY = e.pageY -$(this).offset().top;
+
+        //             $(document).on('mousemove',function(e){
+        //                 $(self).css({left:e.pageX-disX, top : e.pageY - disY});
+        //             });
+
+        //             $(document).on('mouseup',function(e){
+        //                 $(document).off('mousemove').off('mouseup');
+        //             });
+        //         });
+            
+        //         return this;
+        //     }
+        // }); 
+        // $('#demo').drag();
+        
+//*******************************************
+        //2.浅层克隆 $.extend  = $.fn.extend
+        //3.深层克隆
+
+        var obj1 = {
+            name : 'abc',
+            age : 10
+        }
+        
+        var obj2 = {
+            name : 'abc',
+            age :34,
+            smoke : true
+        }
+
+        var obj3 = {
+            name : 'avdc',
+            fortune:10000
+        }
+
+        //浅层克隆obj2到obj1
+        //没有属性的补，有的属性就覆盖
+        $.extend(obj1,obj2);
+        //后面无论写多少个，都是把后面的往第一个里面放
+        $.extend(obj1,obj2,obj3);
+
+        //3.深层克隆
+        //其他规则跟浅层克隆基本一样，你有的我也给你覆盖，没有的我给你加上
+        //就是碰到引用值有点不一样
+        //深层克隆就不是一个索引，第一个没有object，obj2克隆过去不会共享索引    然后如果第一个是object，第二个也是object，
+        //同样遵循有的就覆盖，没有的就添上
+        $.extend(true,obj1,obj2);
+        
+        //同样可以多个参数
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+    
+    </style>
+</head>
+<body>
+    
+    <script src="./jquery/jquery-3.3.1.js"></script>
+    <script>
+        //1. $.each()
+        //跟之前的那个不一样 这个是工具方法
+        //同arr.foreach
+        // var arr =[1,2,3,4];
+        // $.each(arr,function(index,ele){
+        //     console.log(ele);
+        // });
+
+        //2. $.map() 针对数组的每一位进行操作
+    //    var newArr = $.map(arr,function(index,ele){
+    //         return ele * index;
+    //     });
+
+        //3. $.parseJSON() = 原生 JSON.parse();
+        //把字符串转成JSON
+        // $.parseJSON源码就是 ----> JSON.parse(data + '');
+        
+        // var json = '{"name" : "a","age" : 123,"status" : true}';
+        // var a =$.parseJSON(json);
+
+        //4. $.makeArray();
+        //传一个类数组，变成数组
+        var obj = {
+            0 : "a",
+            1 : "b",
+            2 : "c",
+            length:3
+        }
+        var arr = $.makeArray(obj);
+
+        //4.1 两参数 
+        $.makeArray('a',obj);
+        //往数组里挨着塞东西
+
+        //4.2 
+        $.makeArray('c',arr);
+        //往数组里塞东西，数字啊，string都可以
+
+
+
+
+        
+    </script>
+</body>
+</html>

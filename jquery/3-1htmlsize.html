@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="demo">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script src="./jquery/jquery-3.3.1.js"></script>
+    <script> 
+
+        // 8. html（）
+        //特殊 取值只取一个 
+        //赋值会赋全部
+        var arr = ['a','b','c','d'];
+        $('ul li').html(function(index,ele){
+            return '<span>'+ arr[index]+'</span>'
+        });
+
+
+
+
+        //9. text()   -- innerText
+        //$('ul').text()  ---> 返回全部文字内容
+        //$('ul li').text()  ---> 返也是回文全部字内容，但是会全拼接在一起
+        //$('ul li').text('9');//都变9
+        // $('ul li').text(function(index,ele){
+        //     return arr[index]; //返回数组内容
+        // });
+
+        //10 .size() 就跟.length一样,后面不能链式调用了 因为返回的是数字了
+    </script>
+</body>
+</html>

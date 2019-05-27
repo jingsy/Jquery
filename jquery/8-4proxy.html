@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+    
+    </style>
+</head>
+<body>
+    <div id="demo" style="width: 100px;height: 100px;background-color:red;">123</div>
+
+    <script src="./jquery/jquery-3.3.1.js"></script>
+    <script>
+        //proxy
+        //改变this指向
+        //类似 bind
+        // function show(){
+        //     console.log(this);
+        // }
+        
+        // var obj = {
+        //     name:'a',
+        //     age:123
+        // }
+
+        //没有改原来的 是形成了一个新的方法
+        // var showProxy = $.proxy(show,obj); 
+        // showProxy(); //类似bind
+
+        //单对象编程
+        var list = {
+            init: function (){
+                this.ms = 123;
+                this.dom = document.getElementById('demo');
+                this.bindEvent();
+            },
+
+            bindEvent : function (){
+                // this.dom.onclick = this.show;
+                this.dom.onclick = $.proxy(this.show,this);
+            },
+
+            show: function(){
+                console.log(this.produseMs(this.ms));
+
+                
+            },
+
+            produseMs : function(ms){
+                return ms + 234;
+            }
+        }
+        list.init();
+
+
+        //$.noConflict()  防止冲突
+        //如果你用了$与jquery的$冲突
+        var $C = $.noConflict();
+        $C('#demo').css('width','300px');
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+        .demo{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+
+
+    <script src="./jquery/jquery-3.3.1.js"></script>
+    <script>
+
+        //each() 这个ele是原生的
+        $('div').each(function(index,ele){
+            $(ele)
+                .text(index)
+                    .addClass('demo');
+        });
+        //children()
+        //拿出所you子元素
+        
+        //index() 获取索引
+        $('div').on('click',function(e){
+            console.log($(e.target).index()); 
+            //如果你index（）不加参数，index看的是所有兄弟节点
+            //加了参数，只看同类兄弟节点（一定程度的过滤筛选）
+        });
+
+    </script>
+
+</body>
+</html>

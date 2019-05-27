@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="demo"></div>
+    <div class="demo"></div>
+    <div class="demo"></div>
+
+    <script src="./jquery/jquery-3.3.1.js"></script>
+    <script> 
+
+
+        //addClass removeClass hasClass
+
+            //01 addClass
+        //给一个加
+        // $('.demo').eq(0).addClass('active duyi');
+        //给所有加
+        // $('.demo').addClass('active duyi');
+        // $('.demo').addClass(function(index,ele){
+        //     return 'duyi'+index;
+        // });
+
+            //02 removeClass
+        // $('div').eq(0).removeClass('active');
+
+        //使用函数对每个ele进行操作
+        // $('div').removeClass(function(index,ele){
+        //     if(index%2==0){
+        //         return 'demo';
+        //     }
+        //     return '';
+        // });
+
+            //03hasclass
+        // $('.demo').hasClass('active'); //false
+
+         
+    </script>
+</body>
+</html>

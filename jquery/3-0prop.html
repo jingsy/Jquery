@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="demo" cst="aa">
+        <input type="text" checked="checked">
+    </div>
+    <script src="./jquery/jquery-3.3.1.js"></script>
+    <script> 
+    //attr 和 prop
+        //01 attr 基于 setAttribute getAttribute
+        //无论行间写什么 都能取出来
+        //class叫做特性
+            //取值
+        $('.demo').attr('class')
+            //赋值
+        $('.demo').attr('id2','test')
+        
+        //selected disablabed checked
+        //这种特性不用attr 因为他们只要写了就是默认选中的
+
+        //02 prop特性映射 非特性不能映射
+            //取值
+        $('.demo').prop('class'); // demo
+        $('.demo').prop('cst'); //undefined
+        $('input').prop('checked'); //true //写false都是返回true因为关注的是状态
+
+            //赋值
+        $('input').prop('log','duyi'); //标签上不会显示，但是dom上还是有di
+            //如果给特性赋值呢？如 id-->会出现在标签上！
+        $('input').prop('id','test2');  //test2标签会显示
+
+        //总结一下：attr设置取值都行，prop可以用于给表单的一些属性如
+        //selected disablabed checked取值赋值 而attr不行
+
+
+
+
+        // 8. html（）
+        //特殊 取值只取一个 赋值会赋全部
+
+        //9. text()   -- innerText
+        //$('ul').text()  ---> 返回全部文字内容
+        //$('ul li').text()  ---> 返也是回文全部字内容，但是会全拼接在一起
+        //$('ul li')/text('9');
+        // $('ul li').text(function(index,ele){
+        //     return arr[index]; //返回数组内容
+        // });
+    </script>
+</body>
+</html>

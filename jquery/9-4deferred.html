@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script src="./jquery/jquery-3.3.1.js"></script>
+    <script>
+        // 延迟
+        // var df = $.Deferred();
+        // done 成功   fail 失败  progress 正在进行
+        // resolve    reject     notify
+        //done or fail之中只要有一个被触发了 后面就都不会触发了
+
+
+        // 做一件异步的事情
+        // function createScore () {
+        //     var df = $.Deferred();
+        //     setInterval(function () {
+        //         var score = Math.random() * 100;
+        //         if (score > 60) {
+        //             df.resolve('congradulation!!!');
+        //         }else if (score < 50) {
+        //             df.reject('get out');
+        //         }else {
+        //             df.notify('go on');
+        //         }
+        //     }, 1500);
+        //     // done fail progress
+        //     return df.promise();
+        // }
+
+        // var df = createScore();
+    
+        // // 注册成功的回调函数
+        // //可以接受多个参数😯哦
+        // df.done(function (ms) {
+        //     console.log('oh yeah I do it' + ' ' + ms);
+        // });
+
+        // // 注册失败的回调函数
+        // df.fail(function (ms) {
+        //     console.log('sorry I am loser' + ' ' + ms);
+        // });
+
+
+        // // 注册进行时的函数
+        // df.progress(function (ms) {
+        //     console.log('waiting...' + ' ' + ms);
+        // });        
+        
+
+        //自己练习写一下
+        function createScore(){
+            var df = $.Deferred();
+            setInterval(function(){
+                var score = Math.random()*100;
+                if(score>60){
+                    df.resolve();
+                }else if(score<50){
+                    df.reject();
+                }else{
+                    df.notify();
+                }
+            },1000);
+            return df.promise();
+        }
+
+        var df = createScore();
+
+        df.done(function(){
+            console.log("wo we made it");
+        });
+        df.fail(function(){
+            console.log("no  we failed ");
+        });
+
+        df.progress(function(){
+            console.log("waiting ing```");
+        });
+
+    </script>
+</body>
+</html>

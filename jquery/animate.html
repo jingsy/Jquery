@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .demo {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="start">start</button>
+    <button class="stop">stop</button>
+    <button class="finish">finish</button>
+    <div class="demo"></div>
+
+
+    <script src="./jquery/jquery-3.3.1.js"></script>
+    <script>
+        //参数可以传四个：target duration easing callback
+        // $('.demo').on('click', function () {
+        //     $(this)
+        //         .animate({ width: '+=50', height: '+=50', left: "+=100", top: '+=100' }, 1000, 'swing', function () {
+        //             $(this)
+        //                 .animate({ width: '+=50', height: '+=50', left: "+=100", top: '+=100' }, 1000, 'swing')
+        //         });
+        // });
+        //上面可以不用写回掉函数，写成下面
+
+        //可以这样写 因为animate有内置队列
+        $('.start').on('click', function () {
+            $('.demo')
+                .animate({ width: '+=50', height: '+=50', left: "+=100", top: '+=100' }, 1000, 'swing')
+                    .animate({ width: '+=50', height: '+=50', left: "+=100", top: '-100' }, 1000, 'swing')
+        });
+
+        //如果stop 参数为 true 就阻止所有一切运动，不传true 就直接奔向下一个运动
+        //如果传两个true：停止当前运动，并瞬间运动到目标点
+        $('.stop').on('click',function(){
+            $('.demo').stop(true,true);
+        });
+
+        //finsih:瞬间完成运动
+        $('.finish').on('click',function(){
+            $('.demo').finish();
+        });
+
+        //jquery动画开关
+        // jQuery.fx.off = true;
+
+        
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            visibility:visible
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <ul class="demo">
+            <li>1</li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <ul class="demo">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <!-- <script src="./jquery/jquery-3.3.1.js"></script> -->
+    <script src="./jquery/myjquery.js"></script>
+    <script>
+        //1. .get()  -- 获得原生dom标签,不能调用jq标签
+        //想用原生的时候用这个方法
+        // $('.demo').get(0)
+
+        //2. .eq()
+
+        //3. .find()    再次查找
+        // $('.demo').find('ul')
+
+        //4. filter()
+        // $('.wrapper')
+        //     .find('li')
+        //         // .filter('.demo')  .filter(':odd')  //filter不能又选 又筛
+        //             .css({color:"red"});
+        //filter传函数 同数组方法
+        // $('.wrapper ul li').filter(function (index, ele) {
+        //     return index % 2 == 0;
+        // }).css({ color: "red" });
+
+        //5. not() 就是跟filter相反的 找到不符合条件的人 
+
+        //6. has() 
+        //选一个有ul的li 对 你没听错
+        // $('li').has('ul');
+
+        //7. is（） 看前后有没有交集  看看.demo里有没有p
+        // $('.demo').is('p');
+
+        //8.add
+        // $('.wrapper')
+        //     .css({position:'relative'})
+        //         .find('ul')
+        //             .css({position:'relative'})
+    
+        //得到所有的ul
+        // $('.wrapper')
+        //     .add('ul')
+        //         .css({position:'relative'})
+        //9.end 回到过去
+        // $('.wrapper')
+        //     .css({position:'relative'})
+        //         .find('ul')
+        //             .css({position:'absolute'})
+        //                 .end()
+        //                     .css({position:'absolute'})
+
+    
+
+    </script>
+</body>
+
+</html>
